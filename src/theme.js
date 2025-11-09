@@ -29,7 +29,7 @@ export const tokens = (mode) => ({
           900: "#040509",
         },
 
-        accent: {
+        greenAccent: {
           100: "#dbf5ee",
           200: "#b7ebde",
           300: "#94e2cd",
@@ -90,7 +90,7 @@ export const tokens = (mode) => ({
           900: "#d0d1d5",
         },
 
-        accent: {
+        greenAccent: {
           100: "#0f2922",
           200: "#1e5245",
           300: "#2e7c67",
@@ -135,41 +135,39 @@ export const themeSettings = (mode) => {
   return {
     palette: {
       mode: mode,
-      ...colors(
-        mode === "dark"
-          ? {
-              primary: {
-                main: colors.primary[500],
-              },
-              secondary: {
-                main: colors.greenAccent[500],
-              },
-              neutral: {
-                dark: colors.grey[700],
-                main: colors.grey[500],
-                light: colors.grey[100],
-              },
-              background: {
-                default: colors.primary[500],
-              },
-            }
-          : {
-              primary: {
-                main: colors.primary[100],
-              },
-              secondary: {
-                main: colors.greenAccent[500],
-              },
-              neutral: {
-                dark: colors.grey[700],
-                main: colors.grey[500],
-                light: colors.grey[100],
-              },
-              background: {
-                default: "#fcfcfc",
-              },
-            }
-      ),
+      ...(mode === "dark"
+        ? {
+            primary: {
+              main: colors.primary[500],
+            },
+            secondary: {
+              main: colors.greenAccent[500],
+            },
+            neutral: {
+              dark: colors.grey[700],
+              main: colors.grey[500],
+              light: colors.grey[100],
+            },
+            background: {
+              default: colors.primary[500],
+            },
+          }
+        : {
+            primary: {
+              main: colors.primary[100],
+            },
+            secondary: {
+              main: colors.greenAccent[500],
+            },
+            neutral: {
+              dark: colors.grey[700],
+              main: colors.grey[500],
+              light: colors.grey[100],
+            },
+            background: {
+              default: "#fcfcfc",
+            },
+          }),
     },
     typography: {
       fontFamily: ["Source Sans 3", "sans-serif"].join(","),
